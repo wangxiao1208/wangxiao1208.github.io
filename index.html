@@ -1,1 +1,23 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Blog Website</title>
+</head>
+<body>
+    <h3>现在时间</h3>
+    <p><span id="clock"></span></p>
+    <script>
+        function displayTime(){
+            var elt = document.getElementById("clock");
+            var now = new Date();
+            elt.innerHTML = now.toLocaleTimeString(); 
+            /*toLocaleTimeString() 方法可根据本地时间把 Date 对象的时间部分转换为字符串，并返回结果。*/
+            setTimeout(displayTime, 1000) /*每过一秒执行一次displayTime*/
+        }
+        window.onload = displayTime;
+    </script>
+</body>
+</html>
